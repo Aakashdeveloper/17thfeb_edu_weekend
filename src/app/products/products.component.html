@@ -16,6 +16,7 @@
                     <h3 id="headFilter">Filtered By:{{filterProduct}}</h3>
                 </div>
             </div>
+            {{errorMessage}}
             <div class="table-responsive"  *ngIf="products && products.length">
                 <table class="table" >
                     <thead>
@@ -41,7 +42,8 @@
                                 <td>{{product.productCode|lowercase}}</td>
                                 <td>{{product.releaseDate}}</td>
                                 <td>{{product.price|currency:"GBP"}}</td>
-                                <td>{{product.starRating}}</td>
+                                <td><star-edu [rating]="product.starRating"
+                                    (ratingClicked)="onRatingClicked($event)"></star-edu></td>
                             </tr>
                     </tbody>
                 </table>
