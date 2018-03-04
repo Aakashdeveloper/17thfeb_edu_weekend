@@ -38,7 +38,8 @@
                             <tr *ngFor="let product of products|productFilter:filterProduct" >
                                 <td><img [src]="product.imageUrl" *ngIf="showImage"
                                    [style.width.px]="imgWidth" /></td>
-                                <td>{{product.productName|uppercase}}</td>
+                                <td><a [routerLink]="['/products',product.productId]"
+                                    [queryParams]="{name:product.productName,desc:product.description,img:product.imageUrl}">{{product.productName|uppercase}}</a></td>
                                 <td>{{product.productCode|lowercase}}</td>
                                 <td>{{product.releaseDate}}</td>
                                 <td>{{product.price|currency:"GBP"}}</td>

@@ -3,7 +3,6 @@ import {IProduct} from './products';
 import {ProductService} from './product.service';
 
 @Component({
-    selector:'product-comp',
     templateUrl:'./products.component.html',
     //styles:['thead{color:green}','h3{color:red}']
     styleUrls:['./products.component.css']
